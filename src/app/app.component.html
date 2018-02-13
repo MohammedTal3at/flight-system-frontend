@@ -1,5 +1,42 @@
-<li><a routerLink="signup">signup</a></li>
-<li><a routerLink="signin">signin</a></li>
-
-
-<router-outlet></router-outlet>
+<div class="agileits-banner">
+    <div class="bnr-agileinfo">
+        <!-- navigation -->
+        <div class="top-nav w3-agiletop navbar-fixed-top  " style="background-color:rgb(104, 145, 162);">
+            <div class="container">
+                <div class="navbar-header w3llogo ">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                    <h1><a href="index.html">Travelstart</a></h1>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="w3menu navbar-right">
+                        <ul class="nav navbar">
+                            <li><a  href="#myPage" class="active">Home</a></li>
+                            <li><a routerLink="about-us" class="scroll">About Us</a></li>
+                            <li><a routerLink="contact-us" class="scroll">Contact Us</a></li>
+                            <li><a routerLink="trips" class="scroll">Trips</a></li>
+                            <li><a routerLink="profile" class="scroll">Profile</a></li>
+                            <li><a routerLink="signin" class="scroll"> Log in</a></li>
+                            <li><a routerLink="signup" class="scroll"> Register</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!-- //navigation -->
+			
+        
+            <router-outlet></router-outlet>
+        
+        
+<footer class="container-fluid text-center" style="
+background-color:  black">
+        <h3 style="color:white">All rights reserved | Design by ITI Students</h3>
+      </footer>
+      
