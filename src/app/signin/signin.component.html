@@ -20,8 +20,8 @@
     <div class="card card-container">
         <form class="form-signin" (ngSubmit)="onSignin(f)" #f="ngForm">
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="email" class="form-control" ngModel placeholder="Email address" required autofocus>
-            <input type="password" id="password" class="form-control" ngModel placeholder="Password" required>
+            <input type="email" id="email"  name="email" ngModel class="form-control"  placeholder="Email address" required>
+            <input type="password" id="password" name="password" ngModel class="form-control"  placeholder="Password" required>
             <div id="remember" class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me

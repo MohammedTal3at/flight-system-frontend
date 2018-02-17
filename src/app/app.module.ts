@@ -7,7 +7,9 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 
 //Authservice-->put it in the providers
+//contactService
 import { AuthServiceService } from './shared/Auth/auth-service.service';
+import {ContactServiceService} from './shared/Contact/contact-service.service';
 //Http
 //put it in the imports
 import { HttpModule } from '@angular/http';
@@ -79,7 +81,7 @@ import { TripsComponent } from './trips/trips.component';
   },  
   ]),
   ],
-  providers: [AuthServiceService],
+  providers: [AuthServiceService,ContactServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
