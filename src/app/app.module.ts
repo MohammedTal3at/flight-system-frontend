@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 
+<<<<<<< HEAD
 //Authservice-->put it in the providers
 //contactService
 import { AuthServiceService } from './shared/Auth/auth-service.service';
@@ -15,17 +16,23 @@ import { ProfileServiceService } from './shared/Profile/profile-service.service'
 import{ AuthguardGuard } from './shared/Guard/authguard.guard';
 //Http
 //put it in the imports
+=======
+// Authservice-->put it in the providers
+import { AuthServiceService } from './shared/Auth/auth-service.service';
+// Http
+// put it in the imports
+>>>>>>> 1a32cecf4bc9b5c123754c9df5eeaf87fe487521
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-//Routing
+// Routing
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
 import { ProfileComponent } from './profile/profile.component';
-////bootstrap
+//// bootstrap
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
