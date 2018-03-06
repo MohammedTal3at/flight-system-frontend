@@ -27,7 +27,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { TripsComponent } from './trips/trips.component';
 
 
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { TripsDetailsComponent } from './trips/trips-details/trips-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,11 +42,14 @@ import { TripsComponent } from './trips/trips.component';
   
     TripsComponent,
   
+    TripsDetailsComponent,
+  
 
     
   ],
   imports: [
     BrowserModule,
+    AngularFontAwesomeModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
@@ -70,11 +74,14 @@ import { TripsComponent } from './trips/trips.component';
       },
       {
       path:"about-us", component: AboutUsComponent
-      }
-     ,{
-    path:"signup",component:SignupComponent,
-  },
-  {
+      },
+      {
+      path:"signup",component:SignupComponent,
+      },
+      {
+        path:"trips-details",component:TripsDetailsComponent,
+      },
+      {
     path:'**', component: HomeComponent
   },  
   ]),
