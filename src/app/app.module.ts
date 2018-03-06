@@ -45,6 +45,7 @@ import { TripsDetailsComponent } from './trips/trips-details/trips-details.compo
     ProfileComponent,
   
     TripsComponent,
+    TripsDetailsComponent,
   
 
     
@@ -92,4 +93,5 @@ import { TripsDetailsComponent } from './trips/trips-details/trips-details.compo
   providers: [AuthServiceService,ContactServiceService,ProfileServiceService,AuthguardGuard],
   bootstrap: [AppComponent]
 })
+export class AppModule { }
 
