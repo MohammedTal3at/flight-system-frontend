@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,7 +8,11 @@ import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 
 //Authservice-->put it in the providers
+//contactService
 import { AuthServiceService } from './shared/Auth/auth-service.service';
+import {ContactServiceService} from './shared/Contact/contact-service.service';
+import { ProfileServiceService } from './shared/Profile/profile-service.service';
+import{ AuthguardGuard } from './shared/Guard/authguard.guard';
 //Http
 //put it in the imports
 import { HttpModule } from '@angular/http';
@@ -25,10 +30,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TripsComponent } from './trips/trips.component';
-
-
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TripsDetailsComponent } from './trips/trips-details/trips-details.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,14 +46,11 @@ import { TripsDetailsComponent } from './trips/trips-details/trips-details.compo
   
     TripsComponent,
   
-    TripsDetailsComponent,
-  
 
     
   ],
   imports: [
     BrowserModule,
-    AngularFontAwesomeModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
@@ -61,7 +62,9 @@ import { TripsDetailsComponent } from './trips/trips-details/trips-details.compo
     ModalModule.forRoot(),
     RouterModule.forRoot([
       {
-       path:"profile",component :  ProfileComponent,
+       path:"profile",
+       component :  ProfileComponent,
+       canActivate:[AuthguardGuard]
       },
       {
         path:"contact-us",component:ContactUsComponent,
@@ -74,19 +77,19 @@ import { TripsDetailsComponent } from './trips/trips-details/trips-details.compo
       },
       {
       path:"about-us", component: AboutUsComponent
-      },
-      {
-      path:"signup",component:SignupComponent,
-      },
-      {
-        path:"trips-details",component:TripsDetailsComponent,
-      },
-      {
+      }
+     ,{
+    path:"signup",component:SignupComponent,
+  },
+  {
+    path:"trips-details",component:TripsDetailsComponent,
+  },
+  {
     path:'**', component: HomeComponent
   },  
   ]),
   ],
-  providers: [AuthServiceService],
+  providers: [AuthServiceService,ContactServiceService,ProfileServiceService,AuthguardGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
