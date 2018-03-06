@@ -10,6 +10,8 @@ import { SignupComponent } from './signup/signup.component';
 //contactService
 import { AuthServiceService } from './shared/Auth/auth-service.service';
 import {ContactServiceService} from './shared/Contact/contact-service.service';
+import { ProfileServiceService } from './shared/Profile/profile-service.service';
+import{ AuthguardGuard } from './shared/Guard/authguard.guard';
 //Http
 //put it in the imports
 import { HttpModule } from '@angular/http';
@@ -59,7 +61,9 @@ import { TripsComponent } from './trips/trips.component';
     ModalModule.forRoot(),
     RouterModule.forRoot([
       {
-       path:"profile",component :  ProfileComponent,
+       path:"profile",
+       component :  ProfileComponent,
+       canActivate:[AuthguardGuard]
       },
       {
         path:"contact-us",component:ContactUsComponent,
@@ -81,7 +85,7 @@ import { TripsComponent } from './trips/trips.component';
   },  
   ]),
   ],
-  providers: [AuthServiceService,ContactServiceService],
+  providers: [AuthServiceService,ContactServiceService,ProfileServiceService,AuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

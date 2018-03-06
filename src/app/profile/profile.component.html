@@ -1,9 +1,4 @@
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 <div class="container">
   <div class="row">
       <div class="col-xs-12">
@@ -19,22 +14,15 @@
                       <p>
                           <i class="glyphicon glyphicon-envelope"></i>email@example.com
                           <br>
-                      <!-- Split button -->
-                      <table style="width:100%;">
+                      <!--Split button -->
+                     <table style="width:100%;">
                             <tr>
                               <th>Firstname</th>
-                              <th>Lastname</th> 
-                              <th>Age</th>
+                              <th>Email</th> 
                             </tr>
-                            <tr>
-                              <td>Jill</td>
-                              <td>Smith</td> 
-                              <td>50</td>
-                            </tr>
-                            <tr>
-                              <td>Eve</td>
-                              <td>Jackson</td> 
-                              <td>94</td>
+                            <tr *ngFor="let user of listUsersFromAPI()">
+                              <td>{{user.name}}</td>
+                              <td>{{user.email}}</td> 
                             </tr>
                           </table>
                     
@@ -46,5 +34,22 @@
       </div>
   </div>
 
-
+ <!--<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-3 col-md-offset-3"></div>
+<button class="btn btn-primary">Get Quotes</button>
+<hr>
+<table class="table tale-stripped">
+        <tr>
+            <th class="font-weight-bold"> User Name</th>
+            <th class="font-weight-bold"> Email Name</th>
+        </tr>
+        <tr *ngFor="let user of listUsersFromAPI()">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+    
+        </tr>
+    </table>
+<div id="div1"></div>
+</div>-->
 

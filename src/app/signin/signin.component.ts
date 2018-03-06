@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,EventEmitter,Output} from '@angular/core';
+import {Router} from '@angular/router';
 
 /*import two libraries 
 1- for get the data from the Form
@@ -15,7 +16,8 @@ import { AuthServiceService } from '../shared/Auth/auth-service.service';
 })
 export class SigninComponent implements OnInit {
 //object private of AuthService
-  constructor(private authService:AuthServiceService) { }
+
+  constructor(private authService:AuthServiceService,private router: Router) { }
 
   ngOnInit() {
   }
@@ -29,6 +31,10 @@ export class SigninComponent implements OnInit {
       tokenData=>console.log(tokenData),
       error=>console.log(error)
     );
+    
+    //to go to profile 
+    this.router.navigateByUrl("profile");
+    
   }
 
 }
