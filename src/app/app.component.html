@@ -16,13 +16,27 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <div class="w3menu navbar-right">
                         <ul class="nav navbar">
-                            <li><a  href="#myPage" class="active">Home</a></li>
+                            <li><a  routerLink="Home" class="active">Home</a></li>
                             <li><a routerLink="about-us" class="scroll">About Us</a></li>
                             <li><a routerLink="contact-us" class="scroll">Contact Us</a></li>
                             <li><a routerLink="trips" class="scroll">Trips</a></li>
                             <li><a routerLink="profile" class="scroll">Profile</a></li>
-                            <li><a routerLink="signin" class="scroll"> Log in</a></li>
-                            <li><a routerLink="signup" class="scroll"> Register</a></li>
+                            <!--<span *ngIf="isUserLoggedIn">
+                                <li><a routerLink="signin" class="scroll"> Log in</a></li>
+                                <li><a routerLink="signup" class="scroll"> Register</a></li>
+                            </span>
+                            <span *ngIf="!isUserLoggedIn">
+                                <li><a (click)="logoutClicked()" class="scroll"> Logout</a></li>
+                            </span>-->
+                            <span [ngSwitch]="isUserLoggedIn()">
+                                <li><a href="#" (click)="logoutClicked()" id="logout" *ngSwitchCase="true">
+                                    Logout</a></li>
+                                     <li><a [routerLink]="['/signin']" id="login" *ngSwitchCase="false">
+                                   Login</a></li>
+                                   <li><a [routerLink]="['/signup']" id="resigter" *ngSwitchCase="false">
+                                    Register</a></li>
+                             
+                            </span>
                         </ul>
                     </div>
                     <div class="clearfix"> </div>

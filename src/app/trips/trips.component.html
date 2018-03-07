@@ -6,93 +6,135 @@
 <br>
 <br>
 <br>
+
 <div id="gallery" class="gallery">
   <div class="container">
     <h3 class="title-w3-agile">Trips</h3>
   </div>
-  <div class="agileinfo-gallery-row">
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g1.jpg" alt="" /> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
-    </div>
 
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g2.jpg" alt="" /> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g3.jpg" alt="" /> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g6.jpg" alt=""/> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g5.jpg" alt=""/> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g4.jpg" alt="" /> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g7.jpg" alt=""/> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">
-      <a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">
-      <img src="../../assets/images/g8.jpg" alt="" /> 
-      <div class="agile-figcaption">
-        <h1>trips place</h1>
-        <h4>from: </h4>
-        <h4>to: </h4>
-      </div>
-    </a>
+  <div class="agileinfo-gallery-row">
+    <div class="col-md-4 w3gallery-grids" *ngFor="let tripsdtails of trip">
+      <a href="trips-details/{{tripsdtails.id}}" class="imghvr-hinge-right figure" style="text-decoration: none">
+        <img src="http://localhost/{{tripsdtails.image}}" />
+        <div class="agile-figcaption">
+          <h1> {{tripsdtails.company_id}} </h1>
+          <h4>From: {{tripsdtails.from_place_id}}</h4>
+          <h4>To: {{tripsdtails.to_place_id}}</h4>
+        </div>
+      </a>
     </div>
     <div class="clearfix"> </div>
-
   </div>
 </div>
+
+
+
+
+
+
+<!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+          <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+            <!--<img src="http://localhost/{{tripsdtails.image}}">-->
+            <!--<div class="agile-figcaption">-->
+              <!--<h1>From: {{tripsdtails.from_place_id}}</h1>-->
+              <!--<h1>To: {{tripsdtails.to_place_id}}</h1>-->
+              <!--<h4>Company Name: {{tripsdtails.company_id}} </h4>-->
+
+            <!--</div>-->
+          <!--</a>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+  <!--</div>-->
+
+
+
+
+  <!--<div class="agileinfo-gallery-row">-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g1.jpg" alt="" /> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g2.jpg" alt="" /> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g3.jpg" alt="" /> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g6.jpg" alt=""/> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g5.jpg" alt=""/> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g4.jpg" alt="" /> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g7.jpg" alt=""/> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="col-md-3 col-sm-3 col-xs-6 w3gallery-grids">-->
+      <!--<a href="trips-details" class="imghvr-hinge-right figure" style="text-decoration: none">-->
+      <!--<img src="../../assets/images/g8.jpg" alt="" /> -->
+      <!--<div class="agile-figcaption">-->
+        <!--<h1>trips place</h1>-->
+        <!--<h4>from: </h4>-->
+        <!--<h4>to: </h4>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="clearfix"> </div>-->
+
+  <!--</div>-->
+<!--</div>-->

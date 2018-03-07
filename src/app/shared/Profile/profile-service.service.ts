@@ -15,7 +15,7 @@ export class ProfileServiceService {
   getUser():Observable<ProfileInterface>
   {
     const token=this.authService.getToken();
-    return this.http.get('http://localhost/project/public/api/userdata?token='+token)
+    return this.http.get('http://localhost/flight_system/public/index.php/api/userdata?token='+token)
     .map(res => res.json());
   }
 

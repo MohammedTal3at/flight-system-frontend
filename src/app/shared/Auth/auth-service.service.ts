@@ -10,9 +10,11 @@ import  'rxjs';
 
 @Injectable()
 export class AuthServiceService {
-IsLoggedIn:Boolean;
+IsLoggedIn:boolean;
+IsRegister:boolean;
   constructor(private http:Http) { 
     this.IsLoggedIn=false;
+    this.IsRegister=false;
   }
 
 
@@ -27,17 +29,18 @@ IsLoggedIn:Boolean;
       1-URL
       2-The data coming
       3-the type of data coming*/
+      this.IsRegister=true;
    return this.http.post('http://localhost/project/public/api/client',{
       name:username,email:email,password:password},
   {headers:new Headers({'X-Requested-With':'XMLHttpRequest'})});
-
+    
    
   }
 
   //signin for clients
   signin(email:string,password:string)
   {
-    return this.http.post('http://localhost/project/public/api/client/signin',{
+    return this.http.post('http://localhost/flight_system/public/index.php/api/client/signin',{
      email:email,password:password},
   {headers:new Headers({'X-Requested-With':'XMLHttpRequest'})})
   .map(
@@ -62,6 +65,13 @@ IsLoggedIn:Boolean;
   {
     //this.IsLoggedIn=true;
     return this.IsLoggedIn=true;
+  }
+  //make logout the user
+  getUserLogout()
+  {
+    localStorage.removeItem('token');
+    this.IsLoggedIn=false;
+    return false;
   }
 //get the current token
   getToken()
