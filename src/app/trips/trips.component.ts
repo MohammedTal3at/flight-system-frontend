@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TripService} from "../shared/Trip/trip.service";
+import {TripsInterface} from "../Interfaces/trips-interface";
 
 
 @Component({
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trips.component.css']
 })
 export class TripsComponent implements OnInit {
+  trip:TripsInterface[];
 
-  constructor() { }
+  constructor(private tripService: TripService) { }
 
   ngOnInit() {
+    this.tripService.getTrips().subscribe(data=>{this.trip=data;});
+  }
+
+  listTrips(): TripsInterface[]
+  {
+    return this.trip;
   }
 
 }

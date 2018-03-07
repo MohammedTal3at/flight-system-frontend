@@ -14,6 +14,7 @@ import { AuthServiceService } from './shared/Auth/auth-service.service';
 import {ContactServiceService} from './shared/Contact/contact-service.service';
 import { ProfileServiceService } from './shared/Profile/profile-service.service';
 import{ AuthguardGuard } from './shared/Guard/authguard.guard';
+import { TripService } from './shared/Trip/trip.service';
 //Http
 //put it in the imports
 import { HttpModule } from '@angular/http';
@@ -46,8 +47,7 @@ import { TripsDetailsComponent } from './trips/trips-details/trips-details.compo
     ProfileComponent,
   
     TripsComponent,
-    TripsDetailsComponent,
-  
+    TripsDetailsComponent
 
     
   ],
@@ -84,14 +84,14 @@ import { TripsDetailsComponent } from './trips/trips-details/trips-details.compo
     path:"signup",component:SignupComponent,
   },
   {
-    path:"trips-details",component:TripsDetailsComponent,
+    path:"trips-details/:id",component:TripsDetailsComponent,
   },
   {
     path:'**', component: HomeComponent
   },  
   ]),
   ],
-  providers: [AuthServiceService,ContactServiceService,ProfileServiceService,AuthguardGuard],
+  providers: [AuthServiceService,ContactServiceService,ProfileServiceService,AuthguardGuard, TripService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
