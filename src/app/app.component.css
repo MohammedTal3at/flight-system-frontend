@@ -511,7 +511,8 @@ h3.agile-title:before {
     width: 18px;
 }
 ul.callbacks_tabs.callbacks2_tabs {
-    top: 120%;
+		top: 120%;
+		display: none;
     left: 30%;
 }
 .callbacks_tabs a {
@@ -1978,11 +1979,11 @@ h3.title-w3l-2 {
 		font-size: 13px;
 	}
 }
-//table 
+
 table, th, td {
     border: 3px solid black;
 }
-//login
+
 /*
  * Specific styles of signin component
  */

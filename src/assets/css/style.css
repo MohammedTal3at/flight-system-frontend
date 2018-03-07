@@ -39,7 +39,7 @@ body a:hover,body a:focus{
 } 
 /*-- banner --*/
 .agileits-banner {
-	background:url(../images/2.jpg)no-repeat center 0px;
+	
 	-webkit-background-size:cover;
 	background-size:cover;
 	-moz-background-size:cover;
@@ -512,7 +512,8 @@ h3.agile-title:before {
 }
 ul.callbacks_tabs.callbacks2_tabs {
     top: 120%;
-    left: 30%;
+	left: 30%;
+	display: none;
 }
 .callbacks_tabs a {
     visibility: hidden;
@@ -2000,11 +2001,11 @@ h3.title-w3l-2 {
 		font-size: 13px;
 	}
 }
-//table 
+ /* //table */
 table, th, td {
     border: 3px solid black;
 }
-//login
+/* //login */
 /*
  * Specific styles of signin component
  */
@@ -2014,7 +2015,7 @@ table, th, td {
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    
 }
 
 .card-container.card {

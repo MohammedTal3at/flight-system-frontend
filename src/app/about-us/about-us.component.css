@@ -2000,11 +2000,11 @@ h3.title-w3l-2 {
 		font-size: 13px;
 	}
 }
-//table 
+
 table, th, td {
     border: 3px solid black;
 }
-//login
+
 /*
  * Specific styles of signin component
  */

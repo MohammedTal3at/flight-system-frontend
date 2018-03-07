@@ -571,7 +571,7 @@ h3.title-w3-agile:after {
 }
 /*-- imghvr-hinge --*/
 .agile-figcaption {
-    background: #000;
+    background:rgb(104, 145, 162);
     text-align: center;
     padding: 1em 0;
 	-webkit-transition: .5s all;
@@ -1982,7 +1982,7 @@ h3.title-w3l-2 {
 		font-size: 13px;
 	}
 }
-//table 
+
 table, th, td {
     border: 3px solid black;
 }
