@@ -12,7 +12,7 @@ import { AuthServiceService } from '../shared/Auth/auth-service.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  registerdone:boolean;
   constructor(private authService:AuthServiceService) { }
 
   ngOnInit() {
@@ -24,8 +24,8 @@ export class SignupComponent implements OnInit {
   {
     this.authService.signup(form.value.username,form.value.email,form.value.password)
     .subscribe(
-      response=>console.log(response),
-      error=>console.log(error)
+      response=>{console.log(response),this.registerdone=true;},
+      error=>{console.log(error),this.registerdone=false;}
     );
   }
 }

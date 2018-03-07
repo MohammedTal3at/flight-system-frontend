@@ -35,6 +35,15 @@
       <a href="#" class="forgot-password">
         Forgot the password?
       </a>
+      <span  [ngSwitch]="registerdone">          
+          <div class="alert alert-success" *ngSwitchCase="true">
+            <strong>Success!</strong> resigter please login page.
+          </div>
+          <div class="alert alert-danger" *ngSwitchCase="false">
+            <strong>Failed!</strong> resigter.
+          </div>
+           
+      </span>
     </div>
     <br>
     <br>

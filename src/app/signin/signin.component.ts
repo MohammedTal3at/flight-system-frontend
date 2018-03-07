@@ -17,7 +17,7 @@ import { AuthServiceService } from '../shared/Auth/auth-service.service';
 })
 export class SigninComponent implements OnInit {
 //object private of AuthService
-
+logindone:boolean;
   constructor(private authService:AuthServiceService,private router: Router) { }
 
   ngOnInit() {
@@ -29,12 +29,12 @@ export class SigninComponent implements OnInit {
     this.authService.signin(form.value.email,form.value.password)
     .subscribe(
       //for get the token 
-      tokenData=>console.log(tokenData),
-      error=>console.log(error)
+      tokenData=>{console.log(tokenData),this.logindone=true;},
+      error=>{console.log(error),this.logindone=false;}
     );
     
     //to go to profile 
-    this.router.navigateByUrl("profile");
+    this.router.navigate(["profile"]);
     
   }
 

@@ -19,6 +19,15 @@
         <a href="#" class="forgot-password">
             Forgot the password?
         </a>
+        <span  [ngSwitch]="logindone">          
+            <div class="alert alert-success" *ngSwitchCase="true">
+              <strong>Success!</strong>login.
+            </div>
+            <div class="alert alert-danger" *ngSwitchCase="false">
+              <strong>Failed!</strong> login.
+            </div>
+             
+        </span>
     </div>
     <br>
     <br>
