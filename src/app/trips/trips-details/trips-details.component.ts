@@ -16,8 +16,7 @@ sub: any;
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
+      this.id = +params['id'];} );
     this.tripService.getSingleTrip(this.id).subscribe(data=>{this.trip=data;});
   }
-
 }

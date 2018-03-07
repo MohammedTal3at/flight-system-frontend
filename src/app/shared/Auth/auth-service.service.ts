@@ -40,7 +40,7 @@ IsRegister:boolean;
   //signin for clients
   signin(email:string,password:string)
   {
-    return this.http.post('http://localhost/project/public/api/client/signin',{
+    return this.http.post('http://localhost/flight_system/public/index.php/api/client/signin',{
      email:email,password:password},
   {headers:new Headers({'X-Requested-With':'XMLHttpRequest'})})
   .map(
